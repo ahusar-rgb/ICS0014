@@ -13,7 +13,7 @@ public class MusicServiceApplication {
 
 	public static void main(String[] args) {
 		Album newAlbum = new Album("New album");
-		MusicRecord musicRecord = new MusicRecord(
+		Record musicRecord = new MusicRecord(
 				MusicGenre.POP,
 				new Artist("Jackson"),
 				newAlbum,
@@ -23,15 +23,14 @@ public class MusicServiceApplication {
 				)
 		);
 
-		System.out.println(musicRecord);
-
-		MovieRecord movieRecord = new MovieRecord(
+		Record movieRecord = new MovieRecord(
 				"Movie record 1",
 				MovieGenre.ACTION,
 				new Director("Steven Spielberg")
 		);
 
-		System.out.println(movieRecord);
+		musicRecord.play();
+		movieRecord.play(1, 2);
 		//SpringApplication.run(MusicServiceApplication.class, args);
 	}
 
